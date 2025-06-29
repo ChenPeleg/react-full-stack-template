@@ -4,6 +4,30 @@ This is a template for building React applications with [React Router](https://r
 
 **The main goal of this project is to be about to develop a system with AI Agents**
 
+## Setup
+
+To get started, clone this repository and install the dependencies:
+
+```shellscript
+npm install
+```
+
+initialize the prisma database:
+
+```shellscript
+npx prisma migrate dev --name init
+```
+
+generate the prisma client:
+
+```shellscript
+npx prisma generate
+```
+
+Then, you can run the development server:
+
+```shellscript
+
 ## Features
 
 - This template comes with a prisma database client preconfigured

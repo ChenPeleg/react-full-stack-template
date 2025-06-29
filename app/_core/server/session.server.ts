@@ -28,7 +28,10 @@ const sessionStorage = createSessionStorage<SessionData, SessionFlashData>({
         return session?.payload ? JSON.parse(session?.payload) : null;
     },
     async updateData(id, data, expires) {
-        //@ts-ignore
+        console.log('session id',id)
+        if (!id) {
+            return
+        }
         await db.session.update({
             where: {
                 id: Number(id),
@@ -40,7 +43,7 @@ const sessionStorage = createSessionStorage<SessionData, SessionFlashData>({
         });
     },
     async deleteData(id) {
-        //@ts-ignore
+
         await db.session.delete({where: {id: Number(id)}});
     },
 });

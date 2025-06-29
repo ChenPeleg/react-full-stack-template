@@ -15,25 +15,6 @@ model exampleData {
   updatedAt   DateTime @updatedAt
 }
 
-model FolderPath {
-  id          Int    @id @default(autoincrement())
-  name        String
-  path        String
-  description String
-  type        String
-  createdAt   String
-  updatedAt   String @default("")
-}
-
-model FavoriteLocations {
-  id          Int    @id @default(autoincrement())
-  name        String
-  path        String
-  description String
-  icon        String
-  createdAt   String
-}
-
 model User {
   id       Int     @id @default(autoincrement())
   name     String
