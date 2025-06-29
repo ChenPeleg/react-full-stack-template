@@ -1,9 +1,15 @@
 # React router framework template
 
 This is a template for building React applications with [React Router](https://reactrouter.com/) and [Vite](https://vitejs.dev/).
+
+**The main goal of this project is to be about to develop a system with AI Agents**
+
 ## Features
 
-
+- This template comes with a prisma database client preconfigured
+- It has a simple auth system using [bcrypt](https://www.npmjs.com/package/bcrypt) 
+- It uses [Tailwind CSS](https://tailwindcss.com/) for styling
+- It has a register and login system, a profile page, and a protected route setup
 
 
 - 📖 [React Router docs](https://reactrouter.com/docs/en/v6)
