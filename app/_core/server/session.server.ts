@@ -4,11 +4,12 @@ import {SessionData, SessionFlashData} from '~/models/SessionData';
 
 const sessionStorage = createSessionStorage<SessionData, SessionFlashData>({
     cookie: {
-        name: 'real_world_session',
+        name: 'example_session',
         httpOnly: true,
         maxAge: 60 * 60 * 24 * 1000 * 7, // one week
         path: '/',
-        sameSite: 'lax', // @ts-ignore
+        sameSite: 'lax',
+        // @ts-expect-error this should exit
         secrets: [process?.env?.SESSION_SECRET],
         secure: true,
     },
@@ -28,7 +29,7 @@ const sessionStorage = createSessionStorage<SessionData, SessionFlashData>({
         return session?.payload ? JSON.parse(session?.payload) : null;
     },
     async updateData(id, data, expires) {
-        //@ts-ignore
+
         await db.session.update({
             where: {
                 id: Number(id),
@@ -40,7 +41,7 @@ const sessionStorage = createSessionStorage<SessionData, SessionFlashData>({
         });
     },
     async deleteData(id) {
-        //@ts-ignore
+
         await db.session.delete({where: {id: Number(id)}});
     },
 });

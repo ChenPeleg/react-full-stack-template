@@ -26,8 +26,8 @@ export const links: LinksFunction = () => [{
 
 export function Layout({children}: { children: React.ReactNode }) {
     const loaderData = useLoaderData();
-    const language = loaderData.session.language || 'en';
-   const dir = getLangDirection(loaderData.session.language);
+    const language = loaderData?.session?.language || 'en';
+   const dir = getLangDirection(loaderData?.session?.language);
     return (<html lang={language} dir={dir}>
     <head>
         <meta charSet="utf-8"/>

@@ -1,4 +1,40 @@
-# Welcome to React Router!
+# React router framework template
+
+This is a template for building React applications with [React Router](https://reactrouter.com/) and [Vite](https://vitejs.dev/).
+
+**The main goal of this project is to be about to develop a system with AI Agents**
+
+## Setup
+
+To get started, clone this repository and install the dependencies:
+
+```shellscript
+npm install
+```
+
+initialize the prisma database:
+
+```shellscript
+npx prisma migrate dev --name init
+```
+
+generate the prisma client:
+
+```shellscript
+npx prisma generate
+```
+
+Then, you can run the development server:
+
+```shellscript
+
+## Features
+
+- This template comes with a prisma database client preconfigured
+- It has a simple auth system using [bcrypt](https://www.npmjs.com/package/bcrypt) 
+- It uses [Tailwind CSS](https://tailwindcss.com/) for styling
+- It has a register and login system, a profile page, and a protected route setup
+
 
 - 📖 [React Router docs](https://reactrouter.com/docs/en/v6)
 
