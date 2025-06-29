@@ -1,4 +1,10 @@
-# Welcome to React Router!
+# React router framework template
+
+This is a template for building React applications with [React Router](https://reactrouter.com/) and [Vite](https://vitejs.dev/).
+## Features
+
+
+
 
 - 📖 [React Router docs](https://reactrouter.com/docs/en/v6)
 
