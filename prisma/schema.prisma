@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model exampleData {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model FolderPath {
+  id          Int    @id @default(autoincrement())
+  name        String
+  path        String
+  description String
+  type        String
+  createdAt   String
+  updatedAt   String @default("")
+}
+
+model FavoriteLocations {
+  id          Int    @id @default(autoincrement())
+  name        String
+  path        String
+  description String
+  icon        String
+  createdAt   String
+}
+
+model User {
+  id       Int     @id @default(autoincrement())
+  name     String
+  email    String  @unique
+  password String
+  avatar   String  @default("😃")
+  bio      String?
+  theme    String  @default("light")
+  language String  @default("en")
+}
+
+model Session {
+  id        Int      @id @default(autoincrement())
+  payload   String
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+}

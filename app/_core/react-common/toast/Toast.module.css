@@ -1,0 +1,76 @@
+/* Transition for the popover itself */
+:root {
+    --popover-transition-duration: 0.2s;
+    --toast-width: none;
+    --toast-height: none;
+    --toast-bottom: none;
+    --toast-top: none;
+    --toast-left: none;
+    --toast-right: none;
+}
+
+
+.toastPopover[popover]:popover-open, .legacyToastPopoverOpen {
+    opacity: 1;
+    transform: scale(1);
+    width: var(--toast-width);
+    height: var(--toast-height);
+    position: relative;
+    inset: unset;
+    bottom: var(--toast-bottom);
+    right: var(--toast-right);
+    left: var(--toast-left);
+    top: var(--toast-top);
+    margin: 0;
+}
+
+.legacyToastPopoverOpen {
+    position: fixed;
+}
+
+.toastPopover[popover] {
+    position: relative;
+
+
+    /* Final state of the exit animation */
+    opacity: 0;
+    transform: scale(1);
+
+    transition: opacity var(--popover-transition-duration),
+    transform var(--popover-transition-duration),
+    overlay var(--popover-transition-duration) allow-discrete,
+    display var(--popover-transition-duration) allow-discrete;
+    /* Equivalent to
+    transition: all 0.7s allow-discrete; */
+}
+
+.legacyToastPopover {
+    display: none;
+    opacity: 0;
+    transform: scale(1) translateY(var(--sa-top));
+    z-index: 100;
+    transition: opacity var(--popover-transition-duration),
+    transform var(--popover-transition-duration),
+    overlay var(--popover-transition-duration) allow-discrete,
+    display var(--popover-transition-duration) allow-discrete;
+}
+
+.legacyToastPopoverOpen {
+    opacity: 1;
+    display: block;
+}
+
+/* Needs to be after the previous .toastPopover[popover]:popover-open rule
+to take effect, as the specificity is the same */
+@starting-style {
+    .toastPopover[popover]:popover-open {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    .legacyToastPopoverOpen {
+        opacity: 0;
+        transform: scale(0) translateY(var(--sa-top));
+    }
+}
+
